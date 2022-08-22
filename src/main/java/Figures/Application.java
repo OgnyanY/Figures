@@ -17,13 +17,13 @@ public class Application {
 
         switch (method) {
             case "random":
-                makeRandomFigures();
+                RandomFigures.create(figures);
                 break;
             case "input":
-                makeFigureFromIn();
+                FiguresFromStream.createFromIn(figures);
                 break;
             case "file":
-                makeFigureFromFile();
+                FiguresFromStream.createFromFile(figures);
                 break;
             default:
                 throw new IllegalArgumentException("Incorrect method.");
@@ -31,86 +31,29 @@ public class Application {
         insert.close();
     }
 
-    public void makeRandomFigures() {
-        int max = 3;
-        int min = 1;
-
-        System.out.println("How many figures to create: ");
-        Scanner scanAmount = new Scanner(System.in);
-        int amount = scanAmount.nextInt();
-        for (int i = 0; i < amount; i++) {
-
-            int random = (int) (Math.random() * (max - min)) + max;
-
-            switch (random) {
-                case 1:
-                    Circle circle = RandomCircleFactory.create();
-                    figures.add(circle);
-                    break;
-                case 2:
-                    Rectangle rectangle = RandomRectangleFactory.create();
-                    figures.add(rectangle);
-                    break;
-                case 3:
-                    Triangle triangle = RandomTriangleFactory.create();
-                    break;
-                default:
-                    throw new IllegalArgumentException("Incorrect figure.");
-            }
+    public void ListFigures() {
+        if (figures.size() <= 0) {
+            throw new IllegalArgumentException("There is no figures");
+        }
+        for (Figure figure : figures) {
+            System.out.println(figure.toString());
         }
     }
 
-    public void makeFigureFromIn() {
-        System.out.println("How many figures to create: ");
-        Scanner scanAmount = new Scanner(System.in);
-        int amount = scanAmount.nextInt();
-
-        for (int i = 0; i < amount; i++) {
-            System.out.println("Input figure: ");
-            Scanner scanFigure = new Scanner(System.in);
-            String figure = scanFigure.nextLine();
-
-            addFigure(figure);
-
-            scanFigure.close();
-        }
+    public void DeleteFigure(int index) {
+        figures.remove(index);
     }
 
-    public void makeFigureFromFile() throws FileNotFoundException {
-        System.out.println("Input file name: ");
-        Scanner scanIn = new Scanner(System.in);
-        String fileName = scanIn.nextLine();
-        File file = new File(fileName);
-        Scanner readFile = new Scanner(file);
-
-        while (readFile.hasNextLine()) {
-            String figure = readFile.nextLine();
-            addFigure(figure);
-        }
-        scanIn.close();
-        readFile.close();
+    public void CloneFigure(int index) throws CloneNotSupportedException {
+        Figure newFigure = figures.get(index).clone();
+        figures.add(newFigure);
     }
 
-    private void addFigure(String data){
-        Scanner scanData = new Scanner(data).useDelimiter("\\s");
-        String name = scanData.next();
-        name = name.toLowerCase();
+    /*public void StoreInFile(String file) {
+        return;
+    }*/
 
-        switch (name) {
-            case "circle":
-                Circle circle = FromStringCircleFactory.create(data);
-                figures.add(circle);
-                break;
-            case "rectangle":
-                Rectangle rectangle = FromStringRectangleFactory.create(data);
-                figures.add(rectangle);
-                break;
-            case "triangle":
-                Triangle triangle = FromStringTriangleFactory.create(data);
-                figures.add(triangle);
-                break;
-            default:
-                throw new IllegalArgumentException("Incorrect figure.");
-        }
+    public List<Figure> getFigures() {
+        return figures;
     }
 }
