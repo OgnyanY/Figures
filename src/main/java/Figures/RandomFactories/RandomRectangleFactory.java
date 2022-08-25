@@ -1,4 +1,6 @@
-package Figures;
+package Figures.RandomFactories;
+
+import Figures.TypesOfFigures.Rectangle;
 
 public class RandomRectangleFactory {
     public static Rectangle create(){

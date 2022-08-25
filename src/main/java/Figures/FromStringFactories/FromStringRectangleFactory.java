@@ -1,4 +1,6 @@
-package Figures;
+package Figures.FromStringFactories;
+
+import Figures.TypesOfFigures.Rectangle;
 
 public class FromStringRectangleFactory {
     public static Rectangle create(String data) {

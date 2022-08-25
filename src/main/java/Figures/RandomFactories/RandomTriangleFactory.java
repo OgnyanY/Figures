@@ -1,4 +1,6 @@
-package Figures;
+package Figures.RandomFactories;
+
+import Figures.TypesOfFigures.Triangle;
 
 public class RandomTriangleFactory {
     public static Triangle create() {

@@ -1,4 +1,6 @@
-package Figures;
+package Figures.RandomFactories;
+
+import Figures.TypesOfFigures.Circle;
 
 public class RandomCircleFactory {
     public static Circle create() {

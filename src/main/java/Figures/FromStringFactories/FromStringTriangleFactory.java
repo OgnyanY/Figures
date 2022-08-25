@@ -1,4 +1,6 @@
-package Figures;
+package Figures.FromStringFactories;
+
+import Figures.TypesOfFigures.Triangle;
 
 public class FromStringTriangleFactory {
     public static Triangle create(String data) {

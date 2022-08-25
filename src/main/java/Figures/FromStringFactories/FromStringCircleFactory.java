@@ -1,6 +1,6 @@
-package Figures;
+package Figures.FromStringFactories;
 
-import java.util.Scanner;
+import Figures.TypesOfFigures.Circle;
 
 public class FromStringCircleFactory {
     public static Circle create(String data) {

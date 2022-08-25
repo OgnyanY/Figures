@@ -1,18 +1,20 @@
-package Figures;
+package Figures.TypesOfFigures;
+
+import lombok.Getter;
 
 import java.util.Scanner;
 
 public class Circle extends Figure {
-    private double radius;
+    private @Getter double   radius;
 
     public Circle() {
         this.radius = 0;
     }
 
     public Circle(double radius) {
-        if(radius >= 0){
+        if (radius >= 0) {
             this.radius = radius;
-        }else{
+        } else {
             throw new IllegalArgumentException("Incorrect radius.");
         }
 
@@ -28,6 +30,7 @@ public class Circle extends Figure {
         return (Circle) super.clone();
     }
 
+    @Override
     public void fromString(String data) {
         Scanner scanner = new Scanner(data).useDelimiter("\\s");
         String name = scanner.next();
@@ -43,9 +46,5 @@ public class Circle extends Figure {
     @Override
     public String toString() {
         return "circle " + radius + "\n";
-    }
-
-    public double getRadius() {
-        return radius;
     }
 }
