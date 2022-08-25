@@ -1,15 +1,20 @@
 package Figures;
 
+import Figures.TypesOfFigures.Figure;
+
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Stream;
 
 public class Application {
-    private List<Figure> figures;
+    private final List<Figure> figures = new ArrayList<>();
 
-    public void start() throws FileNotFoundException {
+
+    public void start(){
         System.out.println("Choose method to insert figures: ");
         Scanner insert = new Scanner(System.in);
         String method = insert.next();
@@ -49,9 +54,30 @@ public class Application {
         figures.add(newFigure);
     }
 
-    /*public void StoreInFile(String file) {
-        return;
-    }*/
+    public void StoreInFile(String file) {
+        try {
+            File myFile = new File(file);
+            if (myFile.createNewFile()) {
+                System.out.println("File created: " + myFile.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+        try {
+            FileWriter writer = new FileWriter(file);
+            for (Figure figure : figures) {
+                writer.write(figure.toString());
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
 
     public List<Figure> getFigures() {
         return figures;
