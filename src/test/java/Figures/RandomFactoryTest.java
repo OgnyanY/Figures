@@ -1,8 +1,12 @@
 package Figures;
 
+import Figures.RandomFactories.RandomCircleFactory;
+import Figures.RandomFactories.RandomRectangleFactory;
+import Figures.RandomFactories.RandomTriangleFactory;
+import Figures.TypesOfFigures.Circle;
+import Figures.TypesOfFigures.Rectangle;
+import Figures.TypesOfFigures.Triangle;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
