@@ -5,9 +5,12 @@ import lombok.Getter;
 import java.util.Scanner;
 
 public class Triangle extends Figure {
-    private @Getter double sideA;
-    private @Getter double sideB;
-    private @Getter double sideC;
+    private @Getter
+    double sideA;
+    private @Getter
+    double sideB;
+    private @Getter
+    double sideC;
 
     public Triangle() {
         this.sideA = 0;

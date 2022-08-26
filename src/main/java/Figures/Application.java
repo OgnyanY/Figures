@@ -1,9 +1,10 @@
 package Figures;
 
+import Figures.MethodsForInput.FiguresFromScanner;
+import Figures.MethodsForInput.RandomFigures;
 import Figures.TypesOfFigures.Figure;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class Application {
     private final List<Figure> figures = new ArrayList<>();
 
 
-    public void start(){
+    public void start() {
         System.out.println("Choose method to insert figures: ");
         Scanner insert = new Scanner(System.in);
         String method = insert.next();
@@ -25,10 +26,10 @@ public class Application {
                 RandomFigures.create(figures);
                 break;
             case "input":
-                FiguresFromStream.createFromIn(figures);
+                FiguresFromScanner.createFromIn(figures);
                 break;
             case "file":
-                FiguresFromStream.createFromFile(figures);
+                FiguresFromScanner.createFromFile(figures);
                 break;
             default:
                 throw new IllegalArgumentException("Incorrect method.");

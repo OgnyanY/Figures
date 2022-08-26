@@ -5,7 +5,8 @@ import lombok.Getter;
 import java.util.Scanner;
 
 public class Circle extends Figure {
-    private @Getter double   radius;
+    private @Getter
+    double radius;
 
     public Circle() {
         this.radius = 0;
@@ -17,7 +18,6 @@ public class Circle extends Figure {
         } else {
             throw new IllegalArgumentException("Incorrect radius.");
         }
-
     }
 
     @Override

@@ -5,8 +5,6 @@ import Figures.FromStringFactories.FromStringRectangleFactory;
 import Figures.FromStringFactories.FromStringTriangleFactory;
 import Figures.TypesOfFigures.Figure;
 
-
-import java.util.List;
 import java.util.Scanner;
 
 public class FromStringFigureFactory {

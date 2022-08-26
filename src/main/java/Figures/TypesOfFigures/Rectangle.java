@@ -5,8 +5,10 @@ import lombok.Getter;
 import java.util.Scanner;
 
 public class Rectangle extends Figure {
-    private @Getter double sideA;
-    private @Getter double sideB;
+    private @Getter
+    double sideA;
+    private @Getter
+    double sideB;
 
     public Rectangle() {
         this.sideA = 0;
