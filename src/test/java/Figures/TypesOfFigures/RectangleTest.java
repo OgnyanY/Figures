@@ -32,7 +32,9 @@ class RectangleTest {
     }
 
     @ParameterizedTest
-    @CsvSource(value = {"rectangle 2,2 3,6|2.2|3.6", "rectangle 200,2 356,6|200.2|356.6", "rectangle 0,2 0,6|0.2|0.6"}, delimiter = '|')
+    @CsvSource(value = {"rectangle 2,2 3,6|2.2|3.6",
+                        "rectangle 200,2 356,6|200.2|356.6",
+                        "rectangle 0,2 0,6|0.2|0.6"}, delimiter = '|')
     void testFromString(String data, double expectedA, double expectedB) {
         Rectangle rectangle = new Rectangle();
         rectangle.fromString(data);
@@ -50,7 +52,7 @@ class RectangleTest {
 
     @Test
     void testToString() {
-        Rectangle rectangle = new Rectangle(2.2,3.6);
+        Rectangle rectangle = new Rectangle(2.2, 3.6);
         assertEquals("rectangle 2.2 3.6\n", rectangle.toString());
     }
 

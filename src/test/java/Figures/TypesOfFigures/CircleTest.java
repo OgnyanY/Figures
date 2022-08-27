@@ -31,7 +31,9 @@ class CircleTest {
     }
 
     @ParameterizedTest
-    @CsvSource(value = {"circle 2,2|2.2", "circle 100,25|100.25", "circle 20,233|20.233"},delimiter = '|')
+    @CsvSource(value = {"circle 2,2|2.2",
+                        "circle 100,25|100.25",
+                        "circle 20,233|20.233"},delimiter = '|')
     void testFromString(String data, double expected){
         Circle circle = new Circle();
         circle.fromString(data);
