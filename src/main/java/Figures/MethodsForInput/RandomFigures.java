@@ -16,8 +16,7 @@ public class RandomFigures {
     public static void createFigures(List<Figure> figures, Scanner scanAmount) {
         int amount = scanAmount.nextInt();
         for (int i = 0; i < amount; i++) {
-            RandomFigureFactory factory = new RandomFigureFactory();
-            figures.add(factory.createFigure());
+            figures.add(RandomFigureFactory.createFigure());
         }
     }
 }

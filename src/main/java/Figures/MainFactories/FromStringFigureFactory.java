@@ -8,7 +8,7 @@ import Figures.TypesOfFigures.Figure;
 import java.util.Scanner;
 
 public class FromStringFigureFactory {
-    public Figure createFigure(String data) {
+    public static Figure createFigure(String data) {
         Scanner scanData = new Scanner(data).useDelimiter("\\s");
         String name = scanData.next();
         name = name.toLowerCase();

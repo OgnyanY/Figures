@@ -11,10 +11,9 @@ public class FiguresFromScanner {
     protected static void create(Scanner scanner, List<Figure> figures) {
         boolean exit = false;
         do {
-            String figure = scanner.nextLine();
-            if (!figure.equals("exit")) {
-                FromStringFigureFactory factory = new FromStringFigureFactory();
-                figures.add(factory.createFigure(figure));
+            String figureData = scanner.nextLine();
+            if (!figureData.equals("exit")) {
+                figures.add(FromStringFigureFactory.createFigure(figureData));
             } else {
                 exit = true;
             }

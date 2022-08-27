@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 
 public class RandomFigureFactory {
-    public Figure createFigure() {
+    public static Figure createFigure() {
         int max = 3;
         int min = 1;
         int random = randomGenerator(min, max);
@@ -25,7 +25,7 @@ public class RandomFigureFactory {
         }
     }
 
-    private int randomGenerator(int min, int max) {
+    private static int randomGenerator(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
 
