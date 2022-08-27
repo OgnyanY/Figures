@@ -1,4 +1,4 @@
-package Figures;
+package Figures.TypesOfFigures;
 
 import Figures.TypesOfFigures.Triangle;
 import org.junit.jupiter.api.Test;
