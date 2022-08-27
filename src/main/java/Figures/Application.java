@@ -3,6 +3,7 @@ package Figures;
 import Figures.MethodsForInput.FiguresFromScanner;
 import Figures.MethodsForInput.RandomFigures;
 import Figures.TypesOfFigures.Figure;
+import lombok.Getter;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Application {
-    private final List<Figure> figures = new ArrayList<>();
+    private final @Getter List<Figure> figures = new ArrayList<>();
 
 
     public void start() {
@@ -37,7 +38,7 @@ public class Application {
         insert.close();
     }
 
-    public void ListFigures() {
+    public void listFigures() {
         if (figures.size() <= 0) {
             throw new IllegalArgumentException("There is no figures");
         }
@@ -46,16 +47,16 @@ public class Application {
         }
     }
 
-    public void DeleteFigure(int index) {
+    public void deleteFigure(int index) {
         figures.remove(index);
     }
 
-    public void CloneFigure(int index) throws CloneNotSupportedException {
+    public void cloneFigure(int index) throws CloneNotSupportedException {
         Figure newFigure = figures.get(index).clone();
         figures.add(newFigure);
     }
 
-    public void StoreInFile(String file) {
+    public void storeInFile(String file) {
         try {
             File myFile = new File(file);
             if (myFile.createNewFile()) {
@@ -78,9 +79,5 @@ public class Application {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-    }
-
-    public List<Figure> getFigures() {
-        return figures;
     }
 }

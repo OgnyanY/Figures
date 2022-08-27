@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FiguresFromScanner {
-    protected static void create(Scanner scanner, List<Figure> figures) {
+    public static void create(Scanner scanner, List<Figure> figures) {
         boolean exit = false;
         do {
             String figureData = scanner.nextLine();
