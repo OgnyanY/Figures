@@ -1,4 +1,4 @@
-package Figures;
+package Figures.RandomFactories;
 
 import Figures.RandomFactories.RandomCircleFactory;
 import Figures.RandomFactories.RandomRectangleFactory;
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RandomFactoryTest {
+class RandomFactoriesTest {
     @Test
     void testRandomFigureFactories() {
         Circle circle = RandomCircleFactory.create();
