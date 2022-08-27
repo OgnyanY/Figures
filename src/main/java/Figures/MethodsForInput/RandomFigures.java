@@ -10,10 +10,10 @@ public class RandomFigures {
     public static void create(List<Figure> figures) {
         System.out.println("How many figures to create: ");
         Scanner scanAmount = new Scanner(System.in);
-        createFigureAmount(figures, scanAmount);
+        createFigures(figures, scanAmount);
     }
 
-    private static void createFigureAmount(List<Figure> figures, Scanner scanAmount) {
+    public static void createFigures(List<Figure> figures, Scanner scanAmount) {
         int amount = scanAmount.nextInt();
         for (int i = 0; i < amount; i++) {
             RandomFigureFactory factory = new RandomFigureFactory();
