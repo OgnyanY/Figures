@@ -1,4 +1,4 @@
-package Figures;
+package Figures.Application;
 
 import Figures.MethodsForInput.FiguresFromScanner;
 import Figures.TypesOfFigures.Figure;
@@ -30,7 +30,7 @@ class ApplicationTest {
     @Test
     void testDeleteFigure() {
         try {
-            File file = new File("data");
+            File file = new File("src/main/resources/data");
             Scanner myReader = new Scanner(file);
             FiguresFromScanner.create(myReader, app.getFigures());
             myReader.close();
@@ -48,7 +48,7 @@ class ApplicationTest {
     @Test
     void testClone() throws CloneNotSupportedException {
         try {
-            File file = new File("data");
+            File file = new File("src/main/resources/data");
             Scanner myReader = new Scanner(file);
             FiguresFromScanner.create(myReader, app.getFigures());
             myReader.close();
@@ -70,7 +70,7 @@ class ApplicationTest {
     @Test
     void testStoreInFile() {
         try {
-            File file = new File("data");
+            File file = new File("src/main/resources/data");
             Scanner myReader = new Scanner(file);
             FiguresFromScanner.create(myReader, app.getFigures());
             myReader.close();
@@ -78,10 +78,10 @@ class ApplicationTest {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-        app.storeInFile("actual.txt");
+        app.storeInFile("src/main/resources/actual");
 
-        File actualFile = new File("actual.txt");
-        File expectedFile = new File("expected.txt");
+        File actualFile = new File("src/main/resources/actual");
+        File expectedFile = new File("src/main/resources/expected");
         assertThat(actualFile).hasSameTextualContentAs(expectedFile);
     }
 

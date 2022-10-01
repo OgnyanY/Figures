@@ -18,7 +18,7 @@ class FiguresFromScannerTest {
     void testCreatingCorrectFiguresFromFile() {
         List<Figure> figures = new ArrayList<>();
         try {
-            File file = new File("data");
+            File file = new File("src/main/resources/data");
             Scanner myReader = new Scanner(file);
             FiguresFromScanner.create(myReader, figures);
             myReader.close();
@@ -28,7 +28,7 @@ class FiguresFromScannerTest {
         }
 
         try {
-            File myFile = new File("actual.txt");
+            File myFile = new File("src/main/resources/actual");
             if (myFile.createNewFile()) {
                 System.out.println("File created: " + myFile.getName());
             }
@@ -38,7 +38,7 @@ class FiguresFromScannerTest {
         }
 
         try {
-            FileWriter writer = new FileWriter("actual.txt");
+            FileWriter writer = new FileWriter("src/main/resources/actual");
             for (Figure figure : figures) {
                 writer.write(figure.toString());
             }
@@ -48,8 +48,8 @@ class FiguresFromScannerTest {
             e.printStackTrace();
         }
 
-        File actualFile = new File("actual.txt");
-        File expectedFile = new File("expected.txt");
+        File actualFile = new File("src/main/resources/actual");
+        File expectedFile = new File("src/main/resources/expected");
         assertThat(actualFile).hasSameTextualContentAs(expectedFile);
     }
 
