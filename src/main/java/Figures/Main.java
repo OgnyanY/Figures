@@ -1,10 +1,6 @@
 package Figures;
 
 import Figures.Application.Application;
-import Figures.MethodsForInput.FiguresFromScanner;
-import Figures.MethodsForInput.RandomFigures;
-
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
