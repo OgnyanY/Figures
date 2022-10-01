@@ -1,4 +1,4 @@
-package Figures;
+package Figures.Application;
 
 import Figures.MethodsForInput.FiguresFromScanner;
 import Figures.MethodsForInput.RandomFigures;
@@ -13,15 +13,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Application {
-    private final @Getter List<Figure> figures = new ArrayList<>();
+    private final @Getter
+    List<Figure> figures = new ArrayList<>();
 
 
-    public void start() {
-        System.out.println("Choose method to insert figures: ");
-        Scanner insert = new Scanner(System.in);
-        String method = insert.next();
-        method = method.toLowerCase();
-
+    public void createFigures(String method) {
         switch (method) {
             case "random":
                 RandomFigures.create(figures);
@@ -35,7 +31,6 @@ public class Application {
             default:
                 throw new IllegalArgumentException("Incorrect method.");
         }
-        insert.close();
     }
 
     public void listFigures() {
